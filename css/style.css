@@ -1,0 +1,18 @@
+#Everything, #ShowContact {
+	float: left;
+	display: inline-block;
+}
+
+#ShowContact {
+	visibility: hidden;
+}
+
+#Everything {
+	margin-left: 2em;
+}
+
+#AddButton {
+	margin-top: 1em;
+	border-radius: 8px;
+	background-color: #4CAF50;
+}
