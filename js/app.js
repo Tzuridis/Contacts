@@ -50,7 +50,7 @@ $(document).ready(function() {
 
             $('#ShowContact ul').append("<li id='" + (entireList.length - 1) + "'>" + "<h1>" + save.FirstName + " " + save.LastName + "</h1>" + 'First Name:' + " " + save.FirstName + "</br>" + 'Last Name:' + " " + save.LastName + "</br>" + 'Phone Number:' + " " + " " + save.PhoneNumber + "</br>" + 'Address:' + " " + save.Address + "</br>" + 'City:' + " " + save.City + "</br>" + 'State:' + " " + save.State + "</li>");
 
-            $('#ContactsList ul').append("<li><a href='#' data-index='" + (entireList.length - 1) + "'>" + contact.FirstName + " " + contact.LastName + "</a></li>");
+            $('#ContactsList ul').append("<li><a href='#' class='bottomlink' data-index='" + (entireList.length - 1) + "'>" + contact.FirstName + " " + contact.LastName + "</a></li>");
 
             $('#FirstinputBox').val("");
             $('#LastinputBox').val("");
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
     })
 
-    $('body').on('click', 'div#ContactsList ul li a', function() {
+    $('body').on('click', '.bottomlink', function() {
         var index = $(this).data('index');
         $('li#' + index).show();
         $('li#' + index).siblings().hide();
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
     var entireList = []; //this saves the input from var contact
 
-    $('#Edit').on('click', 'button i.fa-fa', function() {
+    $('body').on('click', '#Edit button i.fa-fa-pencil', function() {
         event.preventDefault();
         $('#FirstinputBox').val();
         $('#LastinputBox').val();
@@ -86,7 +86,7 @@ $(document).ready(function() {
         $('#StateinputBox').val();
     });
 
-    $('#Delete').on('click', 'button i.fa-fa-trash-o', function() {
+    $('body').on('click', '#Delete button i.fa-fa-trash-o', function() {
         $('div#ContactsList ul li a').remove();
 
     })
