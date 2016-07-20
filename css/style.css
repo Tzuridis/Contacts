@@ -33,7 +33,6 @@
 }
 
 li {
-    list-style-type: none;
     line-height: 160%;
     color: blue;
 }
@@ -43,13 +42,9 @@ button.link {
     margin-right
 }
 
-.PhoneNumberPlus,
-.AddressPlus {
-    display: inline-block;
-}
 
 #Edit,
 #Delete {
     display: none;
-    padding-left: 13em;
+    padding-left: 1em;
 }
