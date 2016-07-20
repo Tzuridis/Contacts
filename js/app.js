@@ -84,6 +84,10 @@ $(document).ready(function() {
         console.log($(this).parent().parent().data('index'))
     });
 
+    $('body').on('click', '.Delete button', function() {
+    	
+    });
+
     function deleteRecord(deleteIndex) {
         // $("#ContactList .group li[data-index=" + deleteIndex + "]").remove();
         $target = ".group li[data-index='" + deleteIndex + "']";
