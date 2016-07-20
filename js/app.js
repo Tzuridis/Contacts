@@ -77,21 +77,22 @@ $(document).ready(function() {
     });
 
     $('body').on('click', '.Delete button', function() {
-    	var deleteIndex = $(this).parent().parent().data('index');
-    	console.log('delete', deleteIndex)
-    	deleteRecord(deleteIndex);
+        var deleteIndex = $(this).parent().parent().data('index');
+        console.log('delete', deleteIndex)
+        deleteRecord(deleteIndex);
         $(this).parent().parent().parent().empty();
         console.log($(this).parent().parent().data('index'))
     });
 
-    function deleteRecord (deleteIndex) {
-    	// $("#ContactList .group li[data-index=" + deleteIndex + "]").remove();
-    	$("#ContactsList").find("li[data-index='" + deleteIndex + "']").remove();
-    	console.log($("#ContactsList").find("li[data-index='" + deleteIndex + "']"))
-    // 	.filter(function(){
-    // 		$(this).data('index') === deleteIndex
-    // 	})
-  		// .remove();
+    function deleteRecord(deleteIndex) {
+        // $("#ContactList .group li[data-index=" + deleteIndex + "]").remove();
+        $target = ".group li[data-index='" + deleteIndex + "']";
+        $("#ContactsList").remove($target);
+        console.log($("#ContactsList").find("li[data-index='" + deleteIndex + "']"))
+        // 	.filter(function(){
+        // 		$(this).data('index') === deleteIndex
+        // 	})
+        // .remove();
     }
 
 });
