@@ -1,39 +1,55 @@
-#Everything, #ShowContact {
-	float: left;
-	display: inline-block;
+#Everything,
+#ShowContact {
+    float: left;
+    display: inline-block;
 }
 
 #ShowContact li {
-	display: none;
-	margin-left: 10em;
-	margin-top: 5em;
-	color: black;
+    display: none;
+    margin-left: 10em;
+    margin-top: 5em;
+    color: black;
 }
 
 #Everything {
-	margin-left: 2em;
+    margin-left: 2em;
 }
 
 #AddButton {
-	margin-top: 1em;
-	border-radius: 8px;
-	background-color: #4CAF50;
+    margin-top: 1em;
+    border-radius: 8px;
+    background-color: #4CAF50;
 }
 
-#ContactList li { 
-	padding: 0px; 
+#ContactList li {
+    padding: 0px;
 }
-#ContactList li a { 
-	margin: 0px; display: block; width: 100%; height: 100%; 
+
+#ContactList li a {
+    margin: 0px;
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 li {
-	list-style-type: none;
-	line-height: 160%;
-	color: blue;
-	}
+    list-style-type: none;
+    line-height: 160%;
+    color: blue;
+}
 
-button.link { 
-	background: none;
-	margin-right
+button.link {
+    background: none;
+    margin-right
+}
+
+.PhoneNumberPlus,
+.AddressPlus {
+    display: inline-block;
+}
+
+#Edit,
+#Delete {
+    display: none;
+    padding-left: 13em;
 }
