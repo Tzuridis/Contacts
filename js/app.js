@@ -76,20 +76,33 @@ $(document).ready(function() {
 
     var entireList = []; //this saves the input from var contact
 
-    $('body').on('click', '#Edit button i.fa-fa-pencil', function() {
-        event.preventDefault();
-        $('#FirstinputBox').val();
-        $('#LastinputBox').val();
-        $('#PhoneinputBox').val();
-        $('#AddressinputBox').val();
-        $('#CityinputBox').val();
-        $('#StateinputBox').val();
+    $('#Edit button').click(function() {
+        console.log('Edit works');
     });
 
-    $('body').on('click', '#Delete button i.fa-fa-trash-o', function() {
-        $('div#ContactsList ul li a').remove();
+    // $('body').on('click', '#Edit button i.fa-fa-pencil', function() {
+    //     event.preventDefault();
+    //     $('#FirstinputBox').val('#ShowContact ul li');
+    //     $('#LastinputBox').val();
+    //     $('#PhoneinputBox').val();
+    //     $('#AddressinputBox').val();
+    //     $('#CityinputBox').val();
+    //     $('#StateinputBox').val();
 
-    })
+    // });
+
+    $('#Delete button').click(function() {
+        console.log('Delete works');
+        $('a.bottomlink').remove();
+        $('li#' + index).hide();
+        document.getElementById('Edit').style.display = 'none';
+        document.getElementById('Delete').style.display = 'none';
+    });
+
+    // $('body').on('click', '#Delete button i.fa-fa-trash-o', function() {
+    //     $('div#ContactsList ul li a').remove();
+
+    // })
 
 
 });
