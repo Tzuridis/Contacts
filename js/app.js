@@ -74,12 +74,9 @@ $(document).ready(function() {
         console.log(index)
     })
 
+    var entireList = []; //this saves the input from var contact
 
-});
-
-var entireList = []; //this saves the input from var contact
-
-$('#Edit').on('click', 'div#ContactsList ul li a', function() {
+$('#Edit').on('click', 'button i.fa-fa', function() {
     event.preventDefault();
     $('#FirstinputBox').val();
     $('#LastinputBox').val();
@@ -93,3 +90,7 @@ $('#Delete').on('click', 'button i.fa-fa-trash-o', function() {
     $('div#ContactsList ul li a').remove();
 
 })
+
+
+});
+
