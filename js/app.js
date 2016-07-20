@@ -76,21 +76,20 @@ $(document).ready(function() {
 
     var entireList = []; //this saves the input from var contact
 
-$('#Edit').on('click', 'button i.fa-fa', function() {
-    event.preventDefault();
-    $('#FirstinputBox').val();
-    $('#LastinputBox').val();
-    $('#PhoneinputBox').val();
-    $('#AddressinputBox').val();
-    $('#CityinputBox').val();
-    $('#StateinputBox').val();
+    $('#Edit').on('click', 'button i.fa-fa', function() {
+        event.preventDefault();
+        $('#FirstinputBox').val();
+        $('#LastinputBox').val();
+        $('#PhoneinputBox').val();
+        $('#AddressinputBox').val();
+        $('#CityinputBox').val();
+        $('#StateinputBox').val();
+    });
+
+    $('#Delete').on('click', 'button i.fa-fa-trash-o', function() {
+        $('div#ContactsList ul li a').remove();
+
+    })
+
+
 });
-
-$('#Delete').on('click', 'button i.fa-fa-trash-o', function() {
-    $('div#ContactsList ul li a').remove();
-
-})
-
-
-});
-
