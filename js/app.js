@@ -34,7 +34,7 @@ $(document).ready(function() {
 
             // data-index='" + (entireList.length - 1) + "'
 
-            $('#ContactsList ul').append("<li><a href='#' class='bottomlink' data-index='" + (entireList.length - 1) + "'>" + contact.FirstName + " " + contact.LastName + "</a></li>");
+            $('#ContactsList ul').append("<li><a href='#' class='bottomlink linkListItem' data-index='" + (entireList.length - 1) + "'>" + contact.FirstName + " " + contact.LastName + "</a></li>");
 
             $('#FirstinputBox').val("");
             $('#LastinputBox').val("");
@@ -53,8 +53,6 @@ $(document).ready(function() {
         var index = $(this).data('index');
         $('li#' + index).show();
         $('li#' + index).siblings().hide();
-        // document.getElementById('Edit').style.display = 'inline-block';
-        // document.getElementById('Delete').style.display = 'inline-block';
         console.log(index)
     })
 
@@ -78,25 +76,20 @@ $(document).ready(function() {
 
     $('body').on('click', '.Delete button', function() {
         var deleteIndex = $(this).parent().parent().data('index');
-        console.log('delete', deleteIndex)
-        deleteRecord(deleteIndex);
-        $(this).parent().parent().parent().empty();
-        console.log($(this).parent().parent().data('index'))
+        $(".linkListItem").trigger("customDelete", [deleteIndex]);
+        $(this).parent().parent().remove();
     });
 
-    $('body').on('click', '.Delete button', function() {
-    	
+
+    $('body').on("customDelete", ".linkListItem", function(e, index) {
+    	console.log(e)
+        if ($(this).data('index') === index) {
+        	console.log($(this)[0])
+            $(this).parent().remove();
+
+        }
     });
 
-    function deleteRecord(deleteIndex) {
-        // $("#ContactList .group li[data-index=" + deleteIndex + "]").remove();
-        $target = ".group li[data-index='" + deleteIndex + "']";
-        $("#ContactsList").remove($target);
-        console.log($("#ContactsList").find("li[data-index='" + deleteIndex + "']"))
-        // 	.filter(function(){
-        // 		$(this).data('index') === deleteIndex
-        // 	})
-        // .remove();
-    }
+
 
 });
